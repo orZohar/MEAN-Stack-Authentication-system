@@ -1,0 +1,27 @@
+<div class="hero">
+    <div class="form-box">
+        <div class="button-box">
+          <div #typeRef id="btn"></div>
+            <button type="button" class="toggle-btn" (click)="toggleForm(true)">Login</button>
+            <button type="button" class="toggle-btn" (click)="toggleForm(false)">Register</button>
+        </div>
+    
+    <div class="icons"></div>
+    
+      <form #loginRef style="left:50px;" class="input-group" [formGroup]="loginForm" (ngSubmit)="submitForm(true)">
+        <input formControlName="username" placeholder="Username" class="input-field" type="text" required />
+        <input formControlName="password" placeholder="Password" class="input-field" type="password" required />
+        <h3>{{errMessage}}</h3>
+        <input  class="check-box" type="checkbox" required/><span>Remember Password</span>
+        <button type="submit" class="submit-btn">Login</button>
+      </form>
+      <form  #registerRef style="left:450px;" class="input-group" [formGroup]="registerForm" (ngSubmit)="submitForm(false)">
+        <input formControlName="username" placeholder="Username" class="input-field" type="text" />
+        <input formControlName="email" placeholder="Email" class="input-field" type="text" />
+        <input formControlName="password" placeholder="Password" class="input-field" type="password" />
+        <h3>{{registerErrMsg}}</h3>
+        <input formControlName="terms" class="check-box" type="checkbox" /><span>I agree to the terms</span>
+        <button type="submit" class="submit-btn">Register</button>
+      </form>
+    </div>
+  </div>
